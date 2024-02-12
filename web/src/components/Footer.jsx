@@ -68,7 +68,7 @@ export default function Footer({ club = {} }) {
             />
           </Box>
         </Grid>
-        <Grid
+        {/* <Grid
           item
           xs={12}
           lg
@@ -125,8 +125,8 @@ export default function Footer({ club = {} }) {
             sx={{ mx: 1, color: "text.primary" }}
           >
             <Icon external variant="akar-icons:instagram-fill" />
-          </IconButton> */}
-        </Grid>
+          </IconButton> * /}
+        </Grid> */}
         <Grid
           item
           xs={12}
