@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const BodyLogo = "/assets/body_logo.png";
+const BodyLogo = "/assets/sports-logo.png";
 
 export default function Logo() {
   return (
@@ -12,6 +12,7 @@ export default function Logo() {
         alt="Student Body Logo"
         width={100}
         height={100}
+        style={{borderRadius: "40%"}}
       />
     </Link>
   );
