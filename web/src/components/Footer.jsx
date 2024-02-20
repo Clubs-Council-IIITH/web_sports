@@ -22,7 +22,7 @@ const PRIVACY_POLICY_URL = "https://www.iiit.ac.in/privacy-policy/";
 // const INSTAGRAM_URL = "https://www.instagram.com/iiit.hyderabad/";
 
 const IIITLogo = "/assets/iiit-logo-white.png";
-const BodyLogo = "/assets/sports-logo.png"
+const BodyLogo = "/assets/body_logo.png"
 
 const sites = {
   website: { icon: "mdi:web", color: "#7F7F7F" },
