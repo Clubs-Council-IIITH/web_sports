@@ -31,7 +31,7 @@ const DRAWER_HEIGHT = 70;
 const DRAWER_WIDTH = 240;
 
 // bug report external link  :: To change
-export const BUG_REPORT_URL = "https://forms.office.com/r/zBLuvbBPXZ";
+export const BUG_REPORT_URL = "https://help.iiit.ac.in/projects/web-administration/issues/new";
 
 const sites = {
   website: { icon: "mdi:web", color: "#7F7F7F" },
@@ -94,7 +94,7 @@ function Bar({ onOpenDrawer }) {
   );
 }
 
-function Drawer({ drawerOpen, onCloseDrawer, club={} }) {
+function Drawer({ drawerOpen, onCloseDrawer, club = {} }) {
   const theme = useTheme();
   const pathname = usePathname();
 
@@ -154,13 +154,13 @@ function Drawer({ drawerOpen, onCloseDrawer, club={} }) {
     <div>
       {isDesktop ? (
         <>
-        <Box
-          sx={{ px: 1.5, mt: "10px", display: "flex",justifyContent: "space-around" }}
+          <Box
+            sx={{ px: 1.5, mt: "10px", display: "flex", justifyContent: "space-around" }}
           >
-          <Logo isDesktop={true} />
+            <Logo isDesktop={true} />
           </Box>
           <Box
-          sx={{ px: 1.5, display: "flex",justifyContent: "space-around", mb: "10px" }}
+            sx={{ px: 1.5, display: "flex", justifyContent: "space-around", mb: "10px" }}
           >
             {/* <AccountPopover /> */}
             <Box
@@ -172,7 +172,7 @@ function Drawer({ drawerOpen, onCloseDrawer, club={} }) {
             >
               {publicItems}
             </Box>
-          
+
           </Box>
           <Stack
             direction="row"
@@ -213,23 +213,23 @@ function Drawer({ drawerOpen, onCloseDrawer, club={} }) {
                 ))}
             </Grid>
             <Stack>
-            {LoginItems}
+              {LoginItems}
             </Stack>
           </Stack>
         </>
       ) : (
         <>
-        <ScrollbarWrapper>
-          <Box sx={{ px: 2.5, py: 3, display: "flex", alignSelf: "center", justifyContent: "center" }}>
-            <Logo />
-          </Box>
-          {publicItems}
-          <Box sx={{ flexGrow: 1 }} />
-        </ScrollbarWrapper>
-        <Stack mt={"-10vh"}>
-        {LoginItems}
-        </Stack>
-      </>
+          <ScrollbarWrapper>
+            <Box sx={{ px: 2.5, py: 3, display: "flex", alignSelf: "center", justifyContent: "center" }}>
+              <Logo />
+            </Box>
+            {publicItems}
+            <Box sx={{ flexGrow: 1 }} />
+          </ScrollbarWrapper>
+          <Stack mt={"-10vh"}>
+            {LoginItems}
+          </Stack>
+        </>
       )}
     </div>
   );
@@ -309,9 +309,8 @@ export function Content({ children, ...props }) {
           sx={{
             overflow: "auto",
             width: "100%",
-            marginTop: `${
-              isDesktop ? BAR_HEIGHT_DESKTOP + 20 : BAR_HEIGHT_MOBILE + 15
-            }px`,
+            marginTop: `${isDesktop ? BAR_HEIGHT_DESKTOP + 20 : BAR_HEIGHT_MOBILE + 15
+              }px`,
             paddingTop: `${isDesktop ? theme.spacing(5) : 0}`,
             paddingBottom: theme.spacing(5),
             [theme.breakpoints.up("md")]: {
