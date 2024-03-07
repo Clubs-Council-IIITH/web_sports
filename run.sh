@@ -15,4 +15,10 @@ FILE_PATH="web/next.config.js"
 # Update the IP address in the file
 sed -Ei "s|http://10\.[0-9]+\.[0-9]+\.[0-9]+|https://clubs.iiit.ac.in|g" $FILE_PATH
 
+# cd web
+# npm i
+# cd ..
+
 docker compose -p sports-web up --build
+
+docker compose -p sports-web down

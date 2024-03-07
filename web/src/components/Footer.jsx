@@ -15,6 +15,7 @@ import {
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 import Icon from "components/Icon";
+import { BUG_REPORT_URL } from "components/Layout";
 
 const PRIVACY_POLICY_URL = "https://www.iiit.ac.in/privacy-policy/";
 // const TWITTER_URL = "https://twitter.com/iiit_hyderabad";
@@ -62,7 +63,7 @@ export default function Footer({ club = {} }) {
           <Box>
             <Image
               src={BodyLogo}
-              alt={"NSS"}
+              alt={"SPORTS COUNCIL"}
               height={50}
               width={50}
             />
@@ -168,16 +169,6 @@ export default function Footer({ club = {} }) {
       <Stack direction="row" spacing={1}>
         <Typography
           variant="body2"
-          fontWeight={500}
-          color="black"
-        >
-          © {new Date().getFullYear()}, IIIT Hyderabad
-        </Typography>
-
-        <Box sx={{ flexGrow: 1 }} />
-
-        <Typography
-          variant="body2"
           component={Link}
           href={PRIVACY_POLICY_URL}
           sx={{
@@ -190,6 +181,35 @@ export default function Footer({ club = {} }) {
           }}
         >
           Privacy Policy
+        </Typography>
+
+        <Box sx={{ flexGrow: 1 }} />
+
+        <Typography
+          variant="body2"
+          fontWeight={500}
+          color="black"
+        >
+          © {new Date().getFullYear()}, IIIT Hyderabad
+        </Typography>
+
+        <Box sx={{ flexGrow: 1 }} />
+
+        {/* <Box mx={1}>·</Box> */}
+        <Typography
+          variant="body2"
+          component={Link}
+          href={BUG_REPORT_URL}
+          sx={{
+            fontWeight: 600,
+            textDecoration: "none",
+            color: "black",
+            "&:hover": {
+              textDecoration: "underline",
+            },
+          }}
+        >
+          Report Bugs
         </Typography>
       </Stack>
     </Box>
