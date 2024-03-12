@@ -18,7 +18,7 @@ export function getActive(path, pathname) {
   return pathname.startsWith(path.split("?")[0]);
 }
 
-export default function DrawerItem({ title, path="", icon, onClick=null }) {
+export default function DrawerItem({ title, path = "", icon, onClick = null }) {
   const theme = useTheme();
   const pathname = usePathname();
 
@@ -26,7 +26,6 @@ export default function DrawerItem({ title, path="", icon, onClick=null }) {
 
   const externalLink = path != "" ? isExternalLink(path) : false;
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
-
 
   return (
     <ListItemButton
@@ -39,60 +38,59 @@ export default function DrawerItem({ title, path="", icon, onClick=null }) {
         width: "100%",
         display: "flex",
         textTransform: "capitalize",
-        paddingLeft: isDesktop? theme.spacing(1.5) : theme.spacing(3),
-        paddingRight: isDesktop? theme.spacing(3.5) : theme.spacing(3),
+        paddingLeft: isDesktop ? theme.spacing(1.5) : theme.spacing(3),
+        paddingRight: isDesktop ? theme.spacing(3.5) : theme.spacing(3),
         marginBottom: theme.spacing(0.5),
-        color: title === "login" && isDesktop ?  theme.palette.primary.contrastText : theme.palette.text.menu,
+        color:
+          title === "login" && isDesktop
+            ? theme.palette.primary.contrastText
+            : theme.palette.text.menu,
         borderRadius: 1,
         // active
         ...(active && {
           ...theme.typography.subtitle2,
           color: theme.palette.accent,
-          backgroundColor: alpha(
-            theme.palette.accent,
-            0.16
-          ),
+          backgroundColor: alpha(theme.palette.accent, 0.16),
         }),
       }}
-      {
-        ...(onClick ? { onClick: () => onClick(pathname) }
-          : {
+      {...(onClick
+        ? { onClick: () => onClick(pathname) }
+        : {
             component: Link,
             href: path,
-          })
-        }
+          })}
       {...(externalLink
         ? {
             rel: "noopener noreferrer",
             target: "_blank",
           }
         : {})}
-        >
+    >
       <ListItemIcon
-              sx={{
-                width: 22,
-                height: 22,
-                color: "inherit",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-              >
-              {icon && icon}
-              </ListItemIcon>
-            <ListItemText
+        sx={{
+          width: 22,
+          height: 22,
+          color: "inherit",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        {icon && icon}
+      </ListItemIcon>
+      <ListItemText
         disableTypography
         primary={
           <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="space-between"
+            display="flex"
+            alignItems="center"
+            justifyContent="space-between"
           >
             {title}
             {externalLink && <Icon variant="link" />}
           </Box>
         }
-        />
+      />
     </ListItemButton>
   );
 }

@@ -31,7 +31,8 @@ const DRAWER_HEIGHT = 70;
 const DRAWER_WIDTH = 240;
 
 // bug report external link  :: To change
-export const BUG_REPORT_URL = "https://help.iiit.ac.in/projects/web-administration/issues/new";
+export const BUG_REPORT_URL =
+  "https://help.iiit.ac.in/projects/web-administration/issues/new";
 
 const sites = {
   website: { icon: "mdi:web", color: "#7F7F7F" },
@@ -155,12 +156,22 @@ function Drawer({ drawerOpen, onCloseDrawer, club = {} }) {
       {isDesktop ? (
         <>
           <Box
-            sx={{ px: 1.5, mt: "10px", display: "flex", justifyContent: "space-around" }}
+            sx={{
+              px: 1.5,
+              mt: "10px",
+              display: "flex",
+              justifyContent: "space-around",
+            }}
           >
             <Logo isDesktop={true} />
           </Box>
           <Box
-            sx={{ px: 1.5, display: "flex", justifyContent: "space-around", mb: "10px" }}
+            sx={{
+              px: 1.5,
+              display: "flex",
+              justifyContent: "space-around",
+              mb: "10px",
+            }}
           >
             {/* <AccountPopover /> */}
             <Box
@@ -172,7 +183,6 @@ function Drawer({ drawerOpen, onCloseDrawer, club = {} }) {
             >
               {publicItems}
             </Box>
-
           </Box>
           <Stack
             direction="row"
@@ -186,10 +196,7 @@ function Drawer({ drawerOpen, onCloseDrawer, club = {} }) {
               sm: 1,
             }}
           >
-            <Grid
-              item
-              display="flex"
-            >
+            <Grid item display="flex">
               <IconButton
                 component="a"
                 target="_blank"
@@ -212,23 +219,27 @@ function Drawer({ drawerOpen, onCloseDrawer, club = {} }) {
                   </IconButton>
                 ))}
             </Grid>
-            <Stack>
-              {LoginItems}
-            </Stack>
+            <Stack>{LoginItems}</Stack>
           </Stack>
         </>
       ) : (
         <>
           <ScrollbarWrapper>
-            <Box sx={{ px: 2.5, py: 3, display: "flex", alignSelf: "center", justifyContent: "center" }}>
+            <Box
+              sx={{
+                px: 2.5,
+                py: 3,
+                display: "flex",
+                alignSelf: "center",
+                justifyContent: "center",
+              }}
+            >
               <Logo />
             </Box>
             {publicItems}
             <Box sx={{ flexGrow: 1 }} />
           </ScrollbarWrapper>
-          <Stack mt={"-10vh"}>
-            {LoginItems}
-          </Stack>
+          <Stack mt={"-10vh"}>{LoginItems}</Stack>
         </>
       )}
     </div>
@@ -287,7 +298,8 @@ export function Navigation({ ...props }) {
       <Bar onOpenDrawer={() => setDrawerOpen(true)} />
       <Drawer
         drawerOpen={drawerOpen}
-        onCloseDrawer={() => setDrawerOpen(false)} club={props.club}
+        onCloseDrawer={() => setDrawerOpen(false)}
+        club={props.club}
       />
     </>
   );
@@ -309,8 +321,9 @@ export function Content({ children, ...props }) {
           sx={{
             overflow: "auto",
             width: "100%",
-            marginTop: `${isDesktop ? BAR_HEIGHT_DESKTOP + 20 : BAR_HEIGHT_MOBILE + 15
-              }px`,
+            marginTop: `${
+              isDesktop ? BAR_HEIGHT_DESKTOP + 20 : BAR_HEIGHT_MOBILE + 15
+            }px`,
             paddingTop: `${isDesktop ? theme.spacing(5) : 0}`,
             paddingBottom: theme.spacing(5),
             [theme.breakpoints.up("md")]: {

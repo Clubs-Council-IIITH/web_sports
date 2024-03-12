@@ -23,7 +23,7 @@ const PRIVACY_POLICY_URL = "https://www.iiit.ac.in/privacy-policy/";
 // const INSTAGRAM_URL = "https://www.instagram.com/iiit.hyderabad/";
 
 const IIITLogo = "/assets/iiit-logo-white.png";
-const BodyLogo = "/assets/body_logo.png"
+const BodyLogo = "/assets/body_logo.png";
 
 const sites = {
   website: { icon: "mdi:web", color: "#7F7F7F" },
@@ -42,7 +42,14 @@ export default function Footer({ club = {} }) {
   return (
     <Box>
       <Divider sx={{ py: 4 }} />
-      <Grid container pt={5} pb={3} spacing={2} display={"flex"} flexDirection={"column"}>
+      <Grid
+        container
+        pt={5}
+        pb={3}
+        spacing={2}
+        display={"flex"}
+        flexDirection={"column"}
+      >
         <Grid
           item
           xs={12}
@@ -147,7 +154,8 @@ export default function Footer({ club = {} }) {
               // },
             }}
           >
-            Developed & Maintained with ❤️ by SLC Tech Team (powered by <Typography
+            Developed & Maintained with ❤️ by SLC Tech Team (powered by{" "}
+            <Typography
               variant="body2"
               component={Link}
               href={"https://clubs.iiit.ac.in/"}
@@ -161,7 +169,8 @@ export default function Footer({ club = {} }) {
               }}
             >
               Clubs Council
-            </Typography>)
+            </Typography>
+            )
           </Typography>
         </Grid>
       </Grid>
@@ -185,11 +194,7 @@ export default function Footer({ club = {} }) {
 
         <Box sx={{ flexGrow: 1 }} />
 
-        <Typography
-          variant="body2"
-          fontWeight={500}
-          color="black"
-        >
+        <Typography variant="body2" fontWeight={500} color="black">
           © {new Date().getFullYear()}, IIIT Hyderabad
         </Typography>
 

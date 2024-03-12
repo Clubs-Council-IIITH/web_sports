@@ -13,14 +13,14 @@ import TransitionProvider from "components/TransitionProvider";
 const CLUB_ID = process.env.NEXT_PUBLIC_CLUB_ID || "nss";
 
 export const metadata = {
-  title: 'National Service Scheme',
-  description: 'Nss: contributing to nation',
-}
+  title: "National Service Scheme",
+  description: "Nss: contributing to nation",
+};
 
 export default async function RootLayout({ children }) {
   const { data: { userMeta, userProfile } = {} } = await getClient().query(
     GET_USER,
-    { userInput: null }
+    { userInput: null },
   );
 
   const user = { ...userMeta, ...userProfile };
@@ -37,11 +37,9 @@ export default async function RootLayout({ children }) {
           <LocalizationWrapper>
             <AuthProvider user={user}>
               <ToastProvider>
-                <Navigation club={club}/>
+                <Navigation club={club} />
                 <Content club={club}>
-                  <TransitionProvider>
-                    {children}
-                  </TransitionProvider>
+                  <TransitionProvider>{children}</TransitionProvider>
                 </Content>
                 <Toast />
               </ToastProvider>
@@ -50,5 +48,5 @@ export default async function RootLayout({ children }) {
         </ThemeRegistry>
       </body>
     </html>
-  )
+  );
 }
